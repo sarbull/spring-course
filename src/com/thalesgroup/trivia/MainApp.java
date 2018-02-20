@@ -1,4 +1,4 @@
-package ro.memiq.training;
+package com.thalesgroup.trivia;
 
 import java.util.Arrays;
 
@@ -6,9 +6,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
-import ro.memiq.training.bean.Person;
-import ro.memiq.training.dao.DAO;
-import ro.memiq.training.service.PersonService;
+import com.thalesgroup.trivia.bean.Person;
+import com.thalesgroup.trivia.dao.DAO;
+import com.thalesgroup.trivia.service.PersonService;
 
 @Component
 public class MainApp {
@@ -17,7 +17,7 @@ public class MainApp {
 
 		System.out.println("start app!");
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(ro.memiq.training.ComponentConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(com.thalesgroup.trivia.ComponentConfig.class);
 
 		 test1(context);
 

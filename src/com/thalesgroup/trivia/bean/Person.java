@@ -1,4 +1,4 @@
-package ro.memiq.training.bean;
+package com.thalesgroup.trivia.bean;
 
 public class Person extends Entity {
 

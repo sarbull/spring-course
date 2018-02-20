@@ -1,10 +1,10 @@
-package ro.memiq.training.service;
+package com.thalesgroup.trivia.service;
 
 import java.io.PrintStream;
 import java.util.Arrays;
 
-import ro.memiq.training.bean.Person;
-import ro.memiq.training.dao.DAO;
+import com.thalesgroup.trivia.bean.Person;
+import com.thalesgroup.trivia.dao.DAO;
 
 public class PersonService {
 

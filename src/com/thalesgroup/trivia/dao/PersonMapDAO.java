@@ -1,11 +1,11 @@
-package ro.memiq.training.dao;
+package com.thalesgroup.trivia.dao;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import ro.memiq.training.bean.Person;
+import com.thalesgroup.trivia.bean.Person;
 
 @Repository("map")
 public class PersonMapDAO implements DAO<Person> {

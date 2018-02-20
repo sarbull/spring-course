@@ -1,4 +1,4 @@
-package ro.memiq.training;
+package com.thalesgroup.trivia;
 
 import java.util.HashSet;
 
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-import ro.memiq.training.dao.PersonCollectionDAO;
+import com.thalesgroup.trivia.dao.PersonCollectionDAO;
 
 @Configuration
 @ComponentScan

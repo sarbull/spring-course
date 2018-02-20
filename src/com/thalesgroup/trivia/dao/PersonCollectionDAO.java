@@ -1,8 +1,8 @@
-package ro.memiq.training.dao;
+package com.thalesgroup.trivia.dao;
 
 import java.util.Collection;
 
-import ro.memiq.training.bean.Person;
+import com.thalesgroup.trivia.bean.Person;
 
 public class PersonCollectionDAO implements DAO<Person> {
 

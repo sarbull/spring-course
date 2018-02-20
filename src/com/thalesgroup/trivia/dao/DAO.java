@@ -1,4 +1,4 @@
-package ro.memiq.training.dao;
+package com.thalesgroup.trivia.dao;
 
 public interface DAO<T> {
 
