@@ -22,7 +22,7 @@ public class Question extends Entity {
 		this.correctAnswer = correctAnswer;
 	}
 	
-	public Question(Object jsonObject) {
+	public Question(JSONObject jsonObject) {
 		super();
 		
 		this.category = (String) jsonObject.get("category");
@@ -72,7 +72,7 @@ public class Question extends Entity {
 	}
 
 
-	public boolean isCorrectAnswer() {
+	public boolean correctAnswer() {
 		return correctAnswer;
 	}
 

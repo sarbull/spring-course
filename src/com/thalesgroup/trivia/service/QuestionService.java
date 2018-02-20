@@ -1,26 +1,22 @@
 package com.thalesgroup.trivia.service;
 
 
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-
-import com.thalesgroup.trivia.bean.Question;
-import com.thalesgroup.trivia.dao.DAO;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.thalesgroup.trivia.bean.Question;
+import com.thalesgroup.trivia.dao.DAO;
 
 public class QuestionService {
 
@@ -57,18 +53,17 @@ public class QuestionService {
 	public void createQuestions(int counter) throws IOException, JSONException {
 		JSONObject jsonObject = readJsonFromUrl("https://opentdb.com/api.php?amount=" +  counter + "&difficulty=hard&type=boolean");
 		JSONArray array = jsonObject.getJSONArray("results");
-//		System.out.println("Array = " + array);
 		
 		for(int i = 0; i < counter; i++) {
-			Question q = new Q(array.get(i));
-			
-//			System.out.println(array.get(i));
-			//this.dao.create(q);
-			
-			//System.out.println("Question:" + q);
+			Question q = new Question(((JSONObject) array.get(i)));
+			this.dao.create(q);
 		}
 	}
 
+	public Question[] getQuestions() {
+		return this.dao.getAll();
+	}
+	
 	public void printAll() {
 		ps.println(Arrays.asList(dao.getAll()));
 	}

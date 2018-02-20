@@ -14,7 +14,7 @@ public class QuestionMapDAO implements DAO<Question> {
 	private static int sequence;
 
 	public QuestionMapDAO() {
-		System.out.println("PersonMapDAO constructor");
+		System.out.println("QuestionMapDAO constructor");
 	}
 
 	@Override
