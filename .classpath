@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="var" path="SPRING_LIBS"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-context-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-beans-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-core-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/other/org-apache-commons-logging.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-expression-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/other/apache-log4j-1.2.15.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-aop-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/other/aspectjweaver-1.6.8.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/other/junit-4.12.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/other/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-test-4.3.7.RELEASE.jar"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
