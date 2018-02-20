@@ -26,16 +26,15 @@ public class MainApp {
 		ApplicationContext context = new AnnotationConfigApplicationContext(com.thalesgroup.trivia.ComponentConfig.class);
 
 		test2(context);
+
+		startGame(context);
 	}
 
-	@SuppressWarnings("unchecked")
 	private static void test2(ApplicationContext context) throws IOException, JSONException {
 		QuestionService service = context.getBean(QuestionService.class);
 
 		service.createQuestions(5);
 		service.printAll();
-		
-		startGame(context);
 	}
 	
 	public static String escapeHTML(String s) {
