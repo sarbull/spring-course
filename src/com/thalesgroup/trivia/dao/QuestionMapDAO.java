@@ -5,20 +5,20 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import com.thalesgroup.trivia.bean.Person;
+import com.thalesgroup.trivia.bean.Question;
 
 @Repository("map")
-public class PersonMapDAO implements DAO<Person> {
+public class QuestionMapDAO implements DAO<Question> {
 
-	private static Map<Integer, Person> map = new HashMap<>(); // di
+	private static Map<Integer, Question> map = new HashMap<>(); // di
 	private static int sequence;
 
-	public PersonMapDAO() {
+	public QuestionMapDAO() {
 		System.out.println("PersonMapDAO constructor");
 	}
 
 	@Override
-	public void create(Person t) {
+	public void create(Question t) {
 
 		System.out.println("Map.create");
 
@@ -27,7 +27,7 @@ public class PersonMapDAO implements DAO<Person> {
 	}
 
 	@Override
-	public void update(Person t) {
+	public void update(Question t) {
 		map.put(t.getId(), t);
 	}
 
@@ -37,13 +37,13 @@ public class PersonMapDAO implements DAO<Person> {
 	}
 
 	@Override
-	public Person get(Integer id) {
+	public Question get(Integer id) {
 		return map.get(id);
 	}
 
 	@Override
-	public Person[] getAll() {
-		return map.values().toArray(new Person[map.size()]);
+	public Question[] getAll() {
+		return map.values().toArray(new Question[map.size()]);
 	}
 
 }

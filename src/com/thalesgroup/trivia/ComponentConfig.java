@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-import com.thalesgroup.trivia.dao.PersonCollectionDAO;
+import com.thalesgroup.trivia.dao.QuestionCollectionDAO;
 
 @Configuration
 @ComponentScan
@@ -15,9 +15,9 @@ import com.thalesgroup.trivia.dao.PersonCollectionDAO;
 public class ComponentConfig {
 
 	@Bean
-	public PersonCollectionDAO collection() {
+	public QuestionCollectionDAO collection() {
 		// return new PersonCollectionDAO(new ArrayList<>(), 100);
-		return new PersonCollectionDAO(new HashSet<>(), 10001);
+		return new QuestionCollectionDAO(new HashSet<>(), 10001);
 	}
 
 	// @Bean

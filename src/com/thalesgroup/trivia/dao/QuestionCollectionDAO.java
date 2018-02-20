@@ -2,28 +2,28 @@ package com.thalesgroup.trivia.dao;
 
 import java.util.Collection;
 
-import com.thalesgroup.trivia.bean.Person;
+import com.thalesgroup.trivia.bean.Question;
 
-public class PersonCollectionDAO implements DAO<Person> {
+public class QuestionCollectionDAO implements DAO<Question> {
 
-	private final Collection<Person> collection; // di
+	private final Collection<Question> collection; // di
 	private int sequence;
 
-	public PersonCollectionDAO(Collection<Person> collection, int sequence) {
+	public QuestionCollectionDAO(Collection<Question> collection, int sequence) {
 		System.out.println("PersonListDAO constructor");
 		this.collection = collection;
 		this.sequence = sequence;
 	}
 
 	@Override
-	public void create(Person t) {
+	public void create(Question t) {
 
 		t.setId(++sequence);
 		collection.add(t);
 	}
 
 	@Override
-	public void update(Person t) {
+	public void update(Question t) {
 		delete(t.getId());
 		create(t);
 	}
@@ -34,8 +34,8 @@ public class PersonCollectionDAO implements DAO<Person> {
 	}
 
 	@Override
-	public Person get(Integer id) {
-		for (Person p : collection) {
+	public Question get(Integer id) {
+		for (Question p : collection) {
 			if (p.getId().equals(id)) {
 				return p;
 			}
@@ -44,8 +44,8 @@ public class PersonCollectionDAO implements DAO<Person> {
 	}
 
 	@Override
-	public Person[] getAll() {
-		return collection.toArray(new Person[collection.size()]);
+	public Question[] getAll() {
+		return collection.toArray(new Question[collection.size()]);
 	}
 
 }

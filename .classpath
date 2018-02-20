@@ -16,5 +16,6 @@
 	<classpathentry kind="var" path="SPRING_LIBS/other/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="var" path="SPRING_LIBS/spring/spring-test-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_HOME"/>
+	<classpathentry kind="lib" path="/Users/sarbull/work/training/libraries/other/json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
