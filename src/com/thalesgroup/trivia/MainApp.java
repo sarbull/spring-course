@@ -32,10 +32,25 @@ public class MainApp {
 	private static void test2(ApplicationContext context) throws IOException, JSONException {
 		QuestionService service = context.getBean(QuestionService.class);
 
-		service.createQuestions(2);
+		service.createQuestions(5);
 		service.printAll();
 		
 		startGame(context);
+	}
+	
+	public static String escapeHTML(String s) {
+	    StringBuilder out = new StringBuilder(Math.max(16, s.length()));
+	    for (int i = 0; i < s.length(); i++) {
+	        char c = s.charAt(i);
+	        if (c > 127 || c == '"' || c == '<' || c == '>' || c == '&') {
+	            out.append("&#");
+	            out.append((int) c);
+	            out.append(';');
+	        } else {
+	            out.append(c);
+	        }
+	    }
+	    return out.toString();
 	}
 	
 	private static void startGame(ApplicationContext context) {
@@ -49,7 +64,7 @@ public class MainApp {
 		
 		System.out.println("Game has started!");
 		for (Question question : questions) {
-			System.out.println("Question = " + question.getQuestion());
+			System.out.println("Question = " + escapeHTML(question.getQuestion()));
 			
 			boolean answer = Boolean.valueOf(s.nextLine().toLowerCase());
 			

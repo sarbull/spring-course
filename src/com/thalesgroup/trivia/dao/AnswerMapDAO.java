@@ -19,7 +19,7 @@ public class AnswerMapDAO implements DAO<Answer> {
 
 	@Override
 	public void create(Answer t) {
-		System.out.println("Map.create");
+		//System.out.println("Map.create");
 
 		t.setId(sequence++);
 		map.put(t.getId(), t);
