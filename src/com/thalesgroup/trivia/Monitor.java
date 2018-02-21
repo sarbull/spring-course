@@ -17,6 +17,23 @@ public class Monitor {
 
 	private PrintStream stream = System.out;
 
+	@Pointcut("execution(** com.thalesgroup.trivia.service.QuestionService.createQuestions(..))")
+	public void pointcut3() {
+	}
+	
+	@Before("pointcut3()")
+	public void beforeMonitorCode3() {
+		stream.println("[Monitor] code before method QuestionService Before!");
+	}
+	
+	@After("pointcut3()")
+	public void afterMonitorCode3() {
+		stream.println("[Monitor] code before method QuestionService After!");
+	}
+	
+	
+	
+	
 	@Pointcut("execution(** com.thalesgroup.trivia.dao.AnswerMapDAO.cre*(..))")
 	public void pointcut2() {
 	}
