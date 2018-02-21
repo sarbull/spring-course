@@ -65,6 +65,7 @@ public class QuestionService {
 	}
 	
 	public void printAll() {
+		
 		ps.println(Arrays.asList(dao.getAll()));
 	}
 }
