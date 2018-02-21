@@ -17,43 +17,42 @@ public class Monitor {
 
 	private PrintStream stream = System.out;
 
-	@Pointcut("execution(** com.thalesgroup.trivia.service.QuestionService.createQuestions(..))")
-	public void pointcut3() {
-	}
-	
-	@Before("pointcut3()")
-	public void beforeMonitorCode3() {
-		stream.println("[Monitor] code before method QuestionService Before!");
-	}
-	
-	@After("pointcut3()")
-	public void afterMonitorCode3() {
-		stream.println("[Monitor] code before method QuestionService After!");
-	}
-	
-	
-	
-	
-	@Pointcut("execution(** com.thalesgroup.trivia.dao.AnswerMapDAO.cre*(..))")
-	public void pointcut2() {
-	}
-	
-	@Before("pointcut2()")
-	public void beforeMonitorCode2() {
-		stream.println("[Monitor] code before method AnswerBefore!");
-	}
-	
-	@After("pointcut2()")
-	public void afterMonitorCode2() {
-		stream.println("[Monitor] code before method AnswerAfter!");
-	}
-	
-	
+//	@Pointcut("execution(** com.thalesgroup.trivia.service.QuestionService.createQuestions(..))")
+//	public void pointcut3() {}
+//	
+//	@Before("pointcut3()")
+//	public void beforeMonitorCode3() {
+//		stream.println("[Monitor] code before method QuestionService Before!");
+//	}
+//	
+//	@After("pointcut3()")
+//	public void afterMonitorCode3() {
+//		stream.println("[Monitor] code before method QuestionService After!");
+//	}
+//	
+//	
+//	
+//	
+//	@Pointcut("execution(** com.thalesgroup.trivia.dao.AnswerMapDAO.cre*(..))")
+//	public void pointcut2() {
+//	}
+//	
+//	@Before("pointcut2()")
+//	public void beforeMonitorCode2() {
+//		stream.println("[Monitor] code before method AnswerBefore!");
+//	}
+//	
+//	@After("pointcut2()")
+//	public void afterMonitorCode2() {
+//		stream.println("[Monitor] code before method AnswerAfter!");
+//	}
+//	
 	
 	
 	
 	
-	@Pointcut("execution(** com.thalesgroup.trivia.dao.QuestionMapDAO.cre*(..))")
+	
+	@Pointcut("execution(** com.thalesgroup.trivia.*.*.*(..))")
 	public void pointcut1() {
 	}
 
@@ -68,14 +67,15 @@ public class Monitor {
 	}
 
 	@Around("pointcut1()")
-	public void aroundSP(ProceedingJoinPoint jp) throws Throwable {
+	public Object aroundSP(ProceedingJoinPoint jp) throws Throwable {
 		stream.println("[Monitor] code before method AROUND!");
 		
-		jp.proceed();
+		Object o = jp.proceed();
 
 		stream.println("[Monitor] Method signature: " + jp.getSignature());
 		stream.println("[Monitor] Parameters: " + Arrays.asList(jp.getArgs()));
-
+		
+		return o;
 	}
 
 }
