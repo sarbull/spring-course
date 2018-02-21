@@ -19,8 +19,7 @@ public class QuestionMapDAO implements DAO<Question> {
 
 	@Override
 	public void create(Question t) {
-
-		//System.out.println("Map.create");
+		System.out.println("Map.create");
 
 		t.setId(sequence++);
 		map.put(t.getId(), t);

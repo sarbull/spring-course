@@ -1,9 +1,6 @@
 package com.thalesgroup.trivia.bean;
 
 public class Answer extends Entity {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8185362965080981969L;
 	
 	private boolean answer;
